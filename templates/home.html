@@ -1,0 +1,136 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Fables">
+    <meta name="author" content="Enterprise Development">
+    <link rel="shortcut icon" href="static/assets/custom/images/shortcut.png">
+
+    <title>Common Coulours Finder</title>
+    
+    <!-- animate.css-->  
+    <link href="static/assets/vendor/animate.css-master/animate.min.css" rel="stylesheet">
+    <!-- Load Screen -->
+    <link href="static/assets/vendor/loadscreen/css/spinkit.css" rel="stylesheet">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- Font Awesome 5 -->
+    <link href="static/assets/vendor/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- Fables Icons -->
+    <link href="static/assets/custom/css/fables-icons.css" rel="stylesheet"> 
+    <!-- Bootstrap CSS --> 
+    <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/bootstrap/css/bootstrap-4-navbar.css" rel="stylesheet">
+    <!-- portfolio filter gallery -->
+    <link href="static/assets/vendor/portfolio-filter-gallery/portfolio-filter-gallery.css" rel="stylesheet">
+    <!-- Video Background -->
+    <link href="static/assets/vendor/video-background/video-background.css" rel="stylesheet"> 
+    <!-- FANCY BOX -->
+    <link href="static/assets/vendor/fancybox-master/jquery.fancybox.min.css" rel="stylesheet"> 
+    <!-- RANGE SLIDER -->
+    <link href="static/assets/vendor/range-slider/range-slider.css" rel="stylesheet">
+    <!-- OWL CAROUSEL  --> 
+    <link href="static/assets/vendor/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/owlcarousel/owl.theme.default.min.css" rel="stylesheet">
+    <!-- FABLES CUSTOM CSS FILE -->
+    <link href="static/assets/custom/css/custom.css" rel="stylesheet">
+    <!-- FABLES CUSTOM CSS RESPONSIVE FILE -->
+    <link href="static/assets/custom/css/custom-responsive.css" rel="stylesheet">
+
+    <style>
+        .index-3-height {
+            height: auto
+        }
+
+        .flashes {
+            background: white;
+            padding: 20px 20px;
+        }
+        .flashes li:first-child {
+            font-weight: bold;
+        }
+
+        .flashes li:nth-child(7) {
+            font-weight: bold;
+        }
+
+        .flashes li {
+            font-size: 15px;
+            padding: 5px;
+        }
+
+        form {
+            font-size: 15px;
+        }
+
+        form .btn {
+            font-size: 15px;
+            background: #000;
+            color: #fff
+        }
+    </style>
+
+
+</head>
+
+
+
+<!-- Start Header -->
+<div class="fables-header bg-white index-3-height bg-rules overflow-hidden">
+    <div class="container position-relative z-index">   
+         <div class="row">
+             <div class="col-12 col-lg-7 offset-lg-4 wow fadeInUpBig" data-wow-duration="2s">
+                  <div class="index-3-height-caption">
+                  <p class="font-30 fables-second-text-color">Welcome To Our </p>
+                  <h1 class="fables-main-text-color bold-font mb-2 font-40">Common Colors Finder</h1>
+                  <p class="fables-forth-text-color font-22 mb-3">
+                      Click the button below, upload your image and/or add an image url. <b>Get the result instantly!</b>
+                  </p>
+                      {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <ul class="flashes">
+                        {% for message in messages %}
+                          <li>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                        {% endif %}
+                       {% endwith %}
+                      <br >
+                        <form method="POST" action="" enctype="multipart/form-data">
+
+                            {{ wtf.quick_form(form, novalidate=True) }}
+
+                        </form>
+
+
+
+
+                  </div>
+             </div>
+         </div> 
+    </div>
+</div>  
+<!-- /End Header -->
+
+
+
+
+<script src="static/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="static/assets/vendor/loadscreen/js/ju-loading-screen.js"></script>
+<script src="static/assets/vendor/jquery-circle-progress/circle-progress.min.js"></script>
+<script src="static/assets/vendor/popper/popper.min.js"></script>
+<script src="static/assets/vendor/timeline/jquery.timelify.js"></script>
+<script src="static/assets/vendor/WOW-master/dist/wow.min.js"></script>
+<script src="static/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="static/assets/vendor/bootstrap/js/bootstrap-4-navbar.js"></script>
+<script src="static/assets/vendor/owlcarousel/owl.carousel.min.js"></script> 
+<script src="static/assets/vendor/fancybox-master/jquery.fancybox.min.js"></script>
+<script src="static/assets/vendor/video-background/jquery.mb.YTPlayer.js"></script>
+<script src="static/assets/custom/js/custom.js"></script>  
+ 
+{% endblock %}
